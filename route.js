@@ -18,13 +18,8 @@ router.get("/music", (req, res) => {
 });
 
 // Route to submit data to the db
-router.post('/savemusic', upload.fields([
-    { name: 'image', maxCount: 1 },
-    { name: 'audio', maxCount: 1 }]),
-    submitinfo
-)
+router.post('/savemusic', upload.fields([ { name: 'image', maxCount: 1 },  { name: 'audio', maxCount: 1 }]), submitinfo )
 
-// router.post("/savemusic",  formParser, submitinfo)
 
 //Route to get all the saved music
 router.post("/getallmusic", getallmusic)

@@ -8,6 +8,8 @@ export const submitinfo = async (req, res) => {
     const image = req.files.image[0];
     const audio = req.files.audio[0];
 
+    console.log(rq.files);
+
 
     if (!image || !audio || !artist || !description || !main) {
         return res.status(400).json({ message: `All fields are required` })
