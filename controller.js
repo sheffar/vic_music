@@ -32,7 +32,7 @@ export const submitinfo = async (req, res) => {
     }
 
     try {
-
+ 
         await music.create({
             image: image.path, // Use the filename instead of the path
             audio: audio.path, // Use the filename instead of the path

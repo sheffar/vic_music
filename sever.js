@@ -30,7 +30,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
  
 // Middleware to serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, '../public')));
-
+ 
 // Serve index.html on the base route
 app.get('/', (req, res) => {  
     res.sendFile(path.join(__dirname, '../public', 'index.html'));
