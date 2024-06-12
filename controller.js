@@ -4,11 +4,14 @@ import { music } from "./model.js"
 export const submitinfo = async (req, res) => {
     let { artist, description, main } = req.body
 
+  
+    // const image = req.files.image[0];
+    // const audio = req.files.audio[0];
+    const image = req.files['image'][0];
+    const audio = req.files['audio'][0];
 
-    const image = req.files.image[0];
-    const audio = req.files.audio[0];
 
-    console.log(rq.files);
+    console.log(req.files);
 
 
     if (!image || !audio || !artist || !description || !main) {
@@ -31,8 +34,8 @@ export const submitinfo = async (req, res) => {
     try {
 
         await music.create({
-            image: image.filename, // Use the filename instead of the path
-            audio: audio.filename, // Use the filename instead of the path
+            image: image.path, // Use the filename instead of the path
+            audio: audio.path, // Use the filename instead of the path
             artist,
             description,
             main
